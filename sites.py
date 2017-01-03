@@ -62,25 +62,45 @@ def extrair(nome):
 
 			# Procura nas linhas em html as tags/classes e o seu valor atribui a string nome
 
-			for x in soup.find('h1', attrs={'class': 'titulo_det'}):
-				results.append(x) # Adiciona os elementos a lista
+			#for x in soup.find('h1', attrs={'class': 'titulo_det'}):
+			#	results.append(x) # Adiciona os elementos a lista
 				#nome = x.text
 
 			# Procura nas linhas em html as tags/classes e o seu valor atribui a string preco_antigo
 
-			for x in soup.findAll('div', attrs={'class': 'preco_antigo'}):
+			#for x in soup.findAll('div', attrs={'class': 'preco_antigo'}):
 				#results.append(x.text) # Adiciona os elementos a lista 
-				preco_antigo = x.text
+			#	preco_antigo = x.text
 
 
-			for x in soup.findAll('div', attrs={'class': 'preco_normal'}):
-				preco = x.text
+			#for x in soup.findAll('div', attrs={'class': 'preco_normal'}):
+			#	preco = x.text
 
 			# Procura nas linhas em html as tags/classes e o seu valor atribui a string a_vista
 
-			for x in soup.findAll('span', attrs={'class': 'preco_desconto'}):
+			#for x in soup.findAll('span', attrs={'class': 'preco_desconto'}):
 				#results.append(x.text) # Adiciona os elementos a lista
-				a_vista = x.text
+			#	a_vista = x.text
+
+			x = soup.find('h1', attrs={'class' : 'titulo_det'})
+
+			if x:
+				nome = x.text
+
+			w = soup.find('div', attrs={'class' : 'preco_antigo'})
+
+			if w:
+				preco_antigo = w.text
+
+			y = soup.find('div', attrs={'class' : 'preco_normal'})
+
+			if y:
+				preco = y.text
+
+			z = soup.find('span', attrs={'class' : 'preco_desconto'})
+
+			if z:
+				a_vista = z.text
 
 	except Exception as e2:
 		print("[!] Erro: {}" .format(e2))
@@ -97,6 +117,7 @@ def extrair(nome):
 
 	#Adiciona ao array results a string tratada
 
+	results.append(nome)
 	results.append(preco_antigo)
 	results.append(preco)
 	results.append(a_vista)
