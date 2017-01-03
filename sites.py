@@ -102,30 +102,31 @@ def extrair(nome):
 			if z:
 				a_vista = z.text
 
+
+			#Retira os caracteres especificados (tratamento da string)
+
+			preco_antigo = "".join(preco_antigo.split('\t'))
+			preco_antigo = "".join(preco_antigo.split('\n'))
+			preco = "".join(preco.split('\t'))
+			preco = "".join(preco.split('\n'))
+			a_vista = "".join(a_vista.split('\t'))
+			a_vista = "".join(a_vista.split('\n'))
+
+			#Adiciona ao array results a string tratada
+
+			results.append(nome)
+			results.append(preco_antigo)
+			results.append(preco)
+			results.append(a_vista)
+
+			print(results) # Exibe no terminal o array results
+
+			ws.append(results) # Escreve na tabela o conteúdo do array results
+
+			wb.save(planilha) # Salva o arquivo .xlsx
+
+			time.sleep(5)
+
 	except Exception as e2:
 		print("[!] Erro: {}" .format(e2))
 		pass
-
-	#Retira os caracteres especificados (tratamento da string)
-
-	preco_antigo = "".join(preco_antigo.split('\t'))
-	preco_antigo = "".join(preco_antigo.split('\n'))
-	preco = "".join(preco.split('\t'))
-	preco = "".join(preco.split('\n'))
-	a_vista = "".join(a_vista.split('\t'))
-	a_vista = "".join(a_vista.split('\n'))
-
-	#Adiciona ao array results a string tratada
-
-	results.append(nome)
-	results.append(preco_antigo)
-	results.append(preco)
-	results.append(a_vista)
-
-	print(results) # Exibe no terminal o array results
-
-	ws.append(results) # Escreve na tabela o conteúdo do array results
-
-	wb.save(planilha) # Salva o arquivo .xlsx
-
-	time.sleep(5)
