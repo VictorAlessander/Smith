@@ -54,7 +54,7 @@ def main():
 		wb = load_workbook(planilha) # Carrega um arquivo xlsx existente
 
 	except FileNotFoundError:
-		print("[*] Criando planilha. . .")
+		print(green + "[+] Criando planilha. . ." + restore)
 		cria_planilha.Planilha(planilha).criar()
 		wb = load_workbook(planilha) # Carrega um arquivo xlsx existente
 
@@ -75,6 +75,7 @@ def main():
 	nome_arquivo = str(input("Nome do arquivo com os links (Não esqueça de colocar a extensão .txt)\n"))
 	print(green + '[+] Iniciando' + restore)
 	time.sleep(2)
+
 
 def extrair():
 
@@ -99,26 +100,6 @@ def extrair():
 			results = [] # Array que vai receber as strings tratadas
 
 			# Procura nas linhas em html as tags/classes e o seu valor atribui a string nome
-
-			#for x in soup.find('h1', attrs={'class': 'titulo_det'}):
-			#	results.append(x) # Adiciona os elementos a lista
-				#nome = x.text
-
-			# Procura nas linhas em html as tags/classes e o seu valor atribui a string preco_antigo
-
-			#for x in soup.findAll('div', attrs={'class': 'preco_antigo'}):
-				#results.append(x.text) # Adiciona os elementos a lista 
-			#	preco_antigo = x.text
-
-
-			#for x in soup.findAll('div', attrs={'class': 'preco_normal'}):
-			#	preco = x.text
-
-			# Procura nas linhas em html as tags/classes e o seu valor atribui a string a_vista
-
-			#for x in soup.findAll('span', attrs={'class': 'preco_desconto'}):
-				#results.append(x.text) # Adiciona os elementos a lista
-			#	a_vista = x.text
 
 			x = soup.find('h1', attrs={'class' : 'titulo_det'})
 
@@ -193,4 +174,4 @@ if __name__ == "__main__":
 	print(yellow + negrito + '[+] Ctrl + C para parar o programa.' + restore)
 	while True:
 		extrair()
-		time.sleep(5)
+		time.sleep(600)
