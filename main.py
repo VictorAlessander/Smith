@@ -96,11 +96,12 @@ def extrair():
             z = soup.find('span', attrs={'class' : 'preco_desconto'})
 
             if z:
+                z = soup.find('span', attrs={'itemprop': 'offers'})
                 a_vista = z.text
 
             #Retira os caracteres especificados (tratamento da string)
             
-            filter1 = lambda *argv: [re.sub('[\t\n]', '', arg) for arg in argv]
+            filter1 = lambda *argv: [re.sub('[\t\n depor]', '', arg) for arg in argv]
 
             preco_antigo, preco, a_vista = filter1(preco_antigo, preco, a_vista)
 
