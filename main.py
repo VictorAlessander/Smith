@@ -181,6 +181,9 @@ if __name__ == "__main__":
     elif opcao == '0':
         exit(0)
 
+    else:
+        exit(0)
+
     print(yellow + negrito + '[+] Ctrl + C para parar o programa.' + restore)
     while True:
         extrair()
