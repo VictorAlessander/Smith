@@ -8,5 +8,6 @@ Some links must doesn't work, but the mostly will works.
 Usage:
 
 1 - chmod +x install_packages.sh
+
 2 - ./install_packages.sh
 3 - python main.py (Works only in Python 3)
