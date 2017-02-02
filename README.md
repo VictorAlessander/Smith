@@ -7,11 +7,21 @@ Some links must doesn't work, but the mostly will works.
 
 Usage:
 
+# Linux
+
 1 - chmod +x install_packages.sh
 
 2 - ./install_packages.sh
 
-3 - python main.py (Works only in Python 3)
+3 - python main.py
+
+# Windows
+
+1 - python -m pip install -r requirements.txt
+
+2 - python main.py
+
+# Program works only in Python 3
 
 Functionality:
 
