@@ -55,7 +55,7 @@ Digite help para mais informações.
 #        print(p, a)
 
 def send_data(nome, preco, a_vista):
-    config = {'bot_key' : '321730158:AAGzRx4iPKBa9pbVMps8XZtVzCrfZmsej_U', 'group_id' : int('-186377046')}
+    config = {'bot_key' : 'chave_do_grupo', 'group_id' : int('id_do_grupo')}
     bot = telepot.Bot(config['bot_key'])
     group = config['group_id']
 
