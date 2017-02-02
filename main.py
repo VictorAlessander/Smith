@@ -6,6 +6,7 @@ try:
     import time, re
     from bs4 import BeautifulSoup as BSoup
     import requests
+    import telepot
     from openpyxl import Workbook, load_workbook
 
 except Exception as e1:
@@ -53,13 +54,24 @@ Digite help para mais informações.
 
 #        print(p, a)
 
+def send_data(nome, preco, a_vista):
+    config = {'bot_key' : '321730158:AAGzRx4iPKBa9pbVMps8XZtVzCrfZmsej_U', 'group_id' : int('-186377046')}
+    bot = telepot.Bot(config['bot_key'])
+    group = config['group_id']
+
+    dados = "Produto: {}\nParcelado: {}\nA vista: {}" .format(nome, preco, a_vista)
+
+    bot.sendMessage(group, dados)
+
+    print(green + "[+] Mensagem enviada com sucesso!" + restore)
+
 
 def extrair():
 
     try:
         a1 = open(nome_arquivo, 'r') # Lê o arquivo com os links
 
-        for x in a1.readlines():
+        for x in a1.readlines(): # Laço para percorrer todos os links do arquivo
 
             links = x
 
@@ -76,7 +88,8 @@ def extrair():
 
             results = [] # Array que vai receber as strings tratadas
 
-            # Procura nas linhas em html as tags/classes e o seu valor atribui a string nome
+            # Procura nas linhas em html as tags/classes e os
+            # seus respectivos valores são atribuídos as variáveis
 
             w = soup.find('h1', attrs={'class' : 'titulo_det'})
 
@@ -101,7 +114,7 @@ def extrair():
 
             #Retira os caracteres especificados (tratamento da string)
             
-            filter1 = lambda *argv: [re.sub('[\t\n depor]', '', arg) for arg in argv]
+            filter1 = lambda *argv: [re.sub('[\t\n Ddepor]', '', arg) for arg in argv]
 
             preco_antigo, preco, a_vista = filter1(preco_antigo, preco, a_vista)
 
@@ -119,6 +132,8 @@ def extrair():
             ws.append(results) # Escreve na tabela o conteúdo do array results
 
             wb.save(planilha) # Salva o arquivo .xlsx
+
+            send_data(nome, preco, a_vista)
 
         a1.close()
 
@@ -162,6 +177,12 @@ def main():
     time.sleep(2)
 
 
+    print(yellow + negrito + '[+] Ctrl + C para parar o programa.' + restore)
+    while True:
+        extrair()
+        time.sleep(3600)
+
+
 if __name__ == "__main__":
 
     opcao = str.lower(input('>> '))
@@ -183,8 +204,3 @@ if __name__ == "__main__":
 
     else:
         exit(0)
-
-    print(yellow + negrito + '[+] Ctrl + C para parar o programa.' + restore)
-    while True:
-        extrair()
-        time.sleep(600)
