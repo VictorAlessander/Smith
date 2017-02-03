@@ -4,7 +4,7 @@ A program created to extract informations from the web, like a web scraping.
 
 For append more links of kabum website, open the archive 'kabum.txt' and paste your links.
 Some links must doesn't work, but the mostly will works.
-
+#
 Usage:
 
 # Linux
@@ -20,9 +20,8 @@ Usage:
 1 - python -m pip install -r requirements.txt
 
 2 - python main.py
-
+#
 # Program works only in Python 3
-
 Functionality:
 
 The program will extract the informations in website links, will store in a workbook and send for you in your telegram group. 
