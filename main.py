@@ -10,7 +10,7 @@ try:
     from openpyxl import Workbook, load_workbook
 
 except Exception as e1:
-    print('[!] Ocorreu um erro: {}' .format(e1))
+    print(red + '[!] Ocorreu um erro: {}' .format(e1) + restore)
 
 
 """
