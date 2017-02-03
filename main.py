@@ -35,26 +35,17 @@ _\ \ | | | | | | |_| | | |
                           
 
 
-+-------------------+
++------------------+
 |[S]art / Sair = 0 |
-+-------------------+
++------------------+
 
 Digite help para mais informações.
 
 """)
 
 
-#def avaliar(preco, a_vista):
-
-#        filter2 = lambda *argv: [re.sub('[R$ deporàvista]', '', arg) for arg in argv]
-#        filter3 = lambda *argv: [re.sub('[,]', '.', arg) for arg in argv]
-
-#        p, a = filter2(preco, a_vista)
-#        p, a = filter3(preco, a_vista)
-
-#        print(p, a)
-
 def send_data(nome, preco, a_vista):
+    
     config = {'bot_key' : 'chave_do_grupo', 'group_id' : int('id_do_grupo')}
     bot = telepot.Bot(config['bot_key'])
     group = config['group_id']
@@ -65,6 +56,11 @@ def send_data(nome, preco, a_vista):
 
     print(green + "[+] Mensagem enviada com sucesso!" + restore)
 
+
+#def avaliar(nome, preco, a_vista):
+#
+#
+#
 
 def extrair():
 
@@ -126,8 +122,6 @@ def extrair():
             results.append(a_vista)
 
             print(results) # Exibe no terminal o array results
-
-            #avaliar(preco, a_vista)
 
             ws.append(results) # Escreve na tabela o conteúdo do array results
 
