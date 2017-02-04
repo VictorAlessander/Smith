@@ -26,3 +26,5 @@ Functionality:
 
 The program will extract the informations in website links, will store in a workbook and send for you in your telegram group. 
 The steps "store informations in a workbook" and "send the informations to your Telegram", will be repeated a each 3600 seconds.
+
+If this program somehow helped you, give it a star.
