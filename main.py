@@ -44,23 +44,37 @@ Digite help para mais informações.
 """)
 
 
-def send_data(nome, preco, a_vista):
+def send_data(dados):
     
-    config = {'bot_key' : 'chave_do_grupo', 'group_id' : int('id_do_grupo')}
+    config = {'bot_key' : '321730158:AAGzRx4iPKBa9pbVMps8XZtVzCrfZmsej_U', 'group_id' : int('-186377046')}
     bot = telepot.Bot(config['bot_key'])
     group = config['group_id']
 
-    dados = "Produto: {}\nParcelado: {}\nA vista: {}" .format(nome, preco, a_vista)
+    informacao = "Produto: {}\nParcelado: {}\nA vista: {}" .format(dados[0], dados[1], dados[2])
 
-    bot.sendMessage(group, dados)
+    bot.sendMessage(group, informacao)
 
     print(green + "[+] Mensagem enviada com sucesso!" + restore)
 
 
-#def avaliar(nome, preco, a_vista):
-#
-#
-#
+def avaliar(nome, preco, a_vista):
+
+    dados = [nome]
+
+    #filter2 = lambda *argv: [re.sub('[R$]', '', arg) for arg in argv]
+    #filter3 = lambda *argv: [re.sub('[,]', '.', arg) for arg in argv]
+
+    #preco, a_vista = filter2(preco, a_vista)
+    #preco, a_vista = filter3(preco, a_vista)
+
+    #if(preco < preco and a_vista < a_vista)
+
+    dados.append(preco)
+    dados.append(a_vista)
+
+    send_data(dados)
+
+
 
 def extrair():
 
@@ -127,7 +141,7 @@ def extrair():
 
             wb.save(planilha) # Salva o arquivo .xlsx
 
-            send_data(nome, preco, a_vista)
+            avaliar(nome, preco, a_vista)
 
         a1.close()
 
