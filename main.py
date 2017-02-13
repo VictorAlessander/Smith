@@ -3,7 +3,8 @@
 
 try:
     import cria_planilha
-    import time, re
+    import time
+    import re
     from bs4 import BeautifulSoup as BSoup
     import requests
     import telepot
@@ -85,6 +86,16 @@ def extrair():
 
             links = x
 
+            try:
+                print(yellow + '[+] Verificando se a url está online . . .' + restore)
+                test = requests.head(links)
+                print(green + 'OK {}' .format(links) + restore)
+
+            except:
+                print(red + '404 {}' .format(links) + restore)
+                print('-' * 100)
+                continue
+
             # Variáveis que receberão as strings brutas
 
             nome = ""
@@ -136,6 +147,7 @@ def extrair():
             results.append(a_vista)
 
             print(results) # Exibe no terminal o array results
+            print('-' * 100)
 
             ws.append(results) # Escreve na tabela o conteúdo do array results
 
