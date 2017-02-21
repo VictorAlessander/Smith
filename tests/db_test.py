@@ -5,9 +5,6 @@ import db
 
 
 class TestAdd(unittest.TestCase):
-    """
-    Test the add function from the mymath library
-    """
 
     def test_db(self):
         #t1 = db.db_connection('localhost', 'root', '', 'mysql')
