@@ -5,7 +5,7 @@ python:
 
 sudo: required
 
-install: "./install_packages.sh"
+install: "python3 -m pip install requirements.txt"
 
 script:
   - python main.py test
