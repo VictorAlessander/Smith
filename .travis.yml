@@ -1,0 +1,11 @@
+language: python
+
+python:
+  - "3.5"
+
+sudo: required
+
+install: "./install_packages.sh"
+
+script:
+  - python main.py test
