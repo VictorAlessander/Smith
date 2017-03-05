@@ -4,15 +4,22 @@ import unittest
 import db
 
 
-class TestAdd(unittest.TestCase):
+class TestMysql(unittest.TestCase):
 
-    def test_db(self):
-        #t1 = db.db_connection('localhost', 'root', '', 'mysql')
-        #self.assertTrue(t1)
+    def setUp(self):
+        self.connection = db.db_connection('localhost', 'vagr', 'administrador', 'smith')
+        self.assertTrue(self.connection)
 
-        t2 = db.db_connection('localhost', 'root', '', 'mysql')
-        cursor = t2.cursor()
-        self.assertTrue(cursor.execute('SELECT * FROM user'))
+        self.cursor = self.connection.cursor()
+        self.assertTrue(self.cursor)
+
+    #def test_tablecontent(self):
+    #    self.content = self.cursor.execute('SELECT * FROM products')
+    #    self.assertTrue(self.content)
+
+    def tearDown(self):
+        self.connection.close()
+
 
 if __name__ == '__main__':
     unittest.main()

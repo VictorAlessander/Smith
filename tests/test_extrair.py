@@ -18,12 +18,9 @@ class TestSmith(unittest.TestCase):
 
 	def test_soup(self):
 		self.soup = BSoup(self.link.content, "html.parser")
-		#self.name = self.assertNotEqual(
-		#	self.soup.find('h1', attrs={'class': 'vcard-names'}), None)
-		self.result = self.assertIn(
-			self.soup.find('span',
-			attrs={'class': 'vcard-fullname d-block', 
-				'itemprop': 'name'}).text, "Victor Alessander")
+		self.assertNotEqual(self.soup.find('span', 
+			attrs={'class': 'vcard-fullname d-block',
+			'itemprop': 'name'}), None)
 
 
 if __name__ == "__main__":
