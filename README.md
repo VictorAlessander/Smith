@@ -9,11 +9,9 @@ Some links must doesn't work, but the mostly will works.
 
 Linux:
 
-1 - chmod +x install_packages.sh
+1 - ./install_packages.sh
 
-2 - ./install_packages.sh
-
-3 - python main.py
+2 - python main.py
 #
 Windows:
 
