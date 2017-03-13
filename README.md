@@ -9,7 +9,7 @@ Some links must doesn't work, but the mostly will works.
 
 Linux:
 
-1 - ./install_packages.sh
+1 - python -m pip install -r requirements.txt
 
 2 - python main.py
 #
