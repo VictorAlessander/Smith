@@ -98,7 +98,10 @@ def extrair():
 
             # Variáveis que receberão as strings brutas
 
-            nome, preco_antigo, preco, a_vista = ""
+            nome = ""
+            preco_antigo = ""
+            preco = ""
+            a_vista = ""
 
             # Abre o link informado na variável link
             open_link = requests.get(links)
@@ -146,8 +149,7 @@ def extrair():
             results.append(preco)
             results.append(a_vista)
 
-            #  print("Produto: {}\nPreço Anterior:{}\nPreço Atual: {}\nÀ Vista: {}"
-            #    .format(nome, preco_antigo, preco, a_vista))
+            #  print("Produto: {}\nPreço Anterior:{}\nPreço Atual: {}\nÀ Vista: {}" .format(nome, preco_antigo, preco, a_vista))
 
             ws.append(results)  # Escreve na tabela o conteúdo do array results
 
@@ -195,12 +197,11 @@ def main():
     nome_arquivo = str(
         input("Nome do arquivo com os links (Não esqueça de colocar a extensão .txt)\n"))
     print(green + '[+] Iniciando' + restore)
-    time.sleep(3600)
 
     print(yellow + negrito + '[+] Ctrl + C para parar o programa.' + restore)
     while True:
         extrair()
-        time.sleep(3)
+        time.sleep(3600)
 
 
 if __name__ == "__main__":
