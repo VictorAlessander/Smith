@@ -45,7 +45,8 @@ Digite help para mais informações.
 
 
 def send_data(dados):
-    config = {'bot_key' : 'bot_key', 'group_id' : int('group_id')}
+    # Here must be have a key of your bot and your group id
+    config = {'bot_key' : 'your_bot_key', 'group_id' : int('your_group_id')}
     bot = telepot.Bot(config['bot_key'])
     group = config['group_id']
 
