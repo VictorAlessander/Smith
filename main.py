@@ -46,7 +46,7 @@ Digite help para mais informações.
 
 def send_data(dados):
     # Here must be have a key of your bot and your group id
-    config = {'bot_key' : 'your_bot_key', 'group_id' : int('your_group_id')}
+    config = {'bot_key' : 'bot_key', 'group_id' : int('group_id')}
     bot = telepot.Bot(config['bot_key'])
     group = config['group_id']
 
@@ -59,23 +59,6 @@ def send_data(dados):
     print(informacao)
     print(green + "[+] Mensagem enviada com sucesso!" + restore)
     print('-' * 100)
-
-
-def avaliar(nome, preco, a_vista):
-    dados = [nome]
-
-    # filter2 = lambda *argv: [re.sub('[R$]', '', arg) for arg in argv]
-    # filter3 = lambda *argv: [re.sub('[,]', '.', arg) for arg in argv]
-
-    # preco, a_vista = filter2(preco, a_vista)
-    # preco, a_vista = filter3(preco, a_vista)
-
-    # if(preco < preco and a_vista < a_vista)
-
-    dados.append(preco)
-    dados.append(a_vista)
-
-    send_data(dados)
 
 
 def extrair():
