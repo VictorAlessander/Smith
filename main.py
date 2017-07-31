@@ -15,7 +15,8 @@ except Exception as e1:
 
 
 """
-Program still working only in Kabum website, for now.
+O programa funciona somente no site da kabum, pelo menos por enquanto.
+Sinta-se a vontade para alterá-lo conforme a sua necessidade.
 
 """
 
@@ -44,8 +45,8 @@ Digite help para mais informações.
 """)
 
 
-def send_data(dados):
-    # Here must be have a key of your bot and your group id
+def enviar_dados(dados):
+    # Aqui deve ser inserida a chave do seu bot e o id do grupo onde ele irá atuar
     config = {'bot_key' : 'bot_key', 'group_id' : int('group_id')}
     bot = telepot.Bot(config['bot_key'])
     group = config['group_id']
@@ -59,6 +60,16 @@ def send_data(dados):
     print(informacao)
     print(green + "[+] Mensagem enviada com sucesso!" + restore)
     print('-' * 100)
+
+
+# Falta implementar a função, por enquanto ela apenas repassa os dados.
+def avaliar(nome, preco, a_vista):
+    dados = [nome]
+
+    dados.append(preco)
+    dados.append(a_vista)
+
+    enviar_dados(dados)
 
 
 def extrair():
