@@ -1,5 +1,7 @@
 # Smith
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/85993c3d26cf4176bc6235f67ca2d99f)](https://www.codacy.com/app/VictorAlessander/Smith?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=VictorAlessander/Smith&amp;utm_campaign=Badge_Grade)
+
 A program created to extract informations from the web, like a web scraping.
 
 For append more links of kabum website, open the archive 'kabum.txt' and paste your links.
