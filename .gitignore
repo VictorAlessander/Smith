@@ -4,4 +4,4 @@ venv/*
 *.db
 .env
 .vscode/*
-
+comparative.html
