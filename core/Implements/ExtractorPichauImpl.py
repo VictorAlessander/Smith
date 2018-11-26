@@ -18,10 +18,10 @@ class ExtractorPichauImpl(AbstractExtractor):
         content = BSoup(self.response.text, "html.parser")
 
         name = content.find('div', attrs={'class': 'product title'})
-        normal_price = content.find('li', attrs={'class': 'other'})
-        in_cash = content.find('li', attrs={'class': 'boleto'})
+        normal_price = content.find('span', attrs={'class': 'price'})
+        in_cash = content.find('span', attrs={'class': 'price-boleto'})
 
-        filtrator = lambda arg: re.sub('[\t\nDdepor R$]', '', arg)
+        filtrator = lambda arg: re.sub('[\t\nDdeporàvistanoboletocomdesconto R$]', '', arg)
 
         if name is not None:
             name = content.find('h1').text
@@ -32,7 +32,7 @@ class ExtractorPichauImpl(AbstractExtractor):
             normal_price = filtrator(normal_price)
 
         if in_cash is not None:
-            in_cash = in_cash.text
+            in_cash = in_cash.find('span').text
             in_cash = ".".join(in_cash.split(','))
             in_cash = filtrator(in_cash)
 

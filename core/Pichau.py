@@ -4,6 +4,7 @@ from .avaliator import Avaliator
 from .Implements.HandlerPichauImpl import HandlerPichauImpl
 from .TelegramIntegration.TelegramIntegrationPichau import TelegramIntegrationPichau
 from .TelegramIntegration.Context import Context
+from .Chart.ConcreteFactoryChart import ConcreteFactoryChart
 
 '''
 Design Pattern: Facade
@@ -25,5 +26,8 @@ class Pichau(object):
 
   def finish(self):
     self._telegram.context_interface(self._result.getResult())
+    factory = ConcreteFactoryChart()    
+    chartBar = factory.create_chart_bar()
+    chartBar.interface_chart_bar(self._result.getResult())
 
     return self._result.getResultFormated()
