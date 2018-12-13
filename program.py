@@ -1,7 +1,5 @@
 # coding: UTF-8
 
-from core.avaliator import Avaliator
-# from core.sender import Sender
 from core.Pichau import Pichau
 from core.Kabum import Kabum
 import sys

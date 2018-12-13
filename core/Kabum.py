@@ -1,6 +1,6 @@
 from .Implements.ExtractorKabumImpl import ExtractorKabumImpl
 from .Implements.ResultKabumImpl import ResultKabumImpl
-from .avaliator import Avaliator
+from .Avaliator import Avaliator
 from .TelegramIntegration.TelegramIntegrationKabum import TelegramIntegrationKabum
 from .TelegramIntegration.Context import Context
 

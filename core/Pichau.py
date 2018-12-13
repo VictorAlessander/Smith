@@ -1,6 +1,6 @@
 from .Implements.ExtractorPichauImpl import ExtractorPichauImpl
 from .Implements.ResultPichauImpl import ResultPichauImpl
-from .avaliator import Avaliator
+from .Avaliator import Avaliator
 from .Implements.HandlerPichauImpl import HandlerPichauImpl
 from .TelegramIntegration.TelegramIntegrationPichau import TelegramIntegrationPichau
 from .TelegramIntegration.Context import Context
