@@ -4,4 +4,11 @@
 
 # Project Description
 
-Coming soon
+Webscraper to get some informations of products in e-commerce, avoiding the user to enter in the website many times only to see if any product have special offer.
+
+# Backlog
+
+- API Gateway to get the requests and pass them to Smith (Asynchronous)
+- Database connection
+- Frontend to make easier handle with the data scraped (metrics, charts, comparisons)
+- Improvement in program.py to avoid multiples "if" statements
