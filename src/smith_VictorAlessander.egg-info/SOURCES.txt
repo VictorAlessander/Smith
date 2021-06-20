@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/smith_VictorAlessander.egg-info/PKG-INFO
+src/smith_VictorAlessander.egg-info/SOURCES.txt
+src/smith_VictorAlessander.egg-info/dependency_links.txt
+src/smith_VictorAlessander.egg-info/top_level.txt
