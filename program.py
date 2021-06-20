@@ -1,5 +1,6 @@
 # coding: UTF-8
 
+from core.StatusInvest import StatusInvest
 from core.Pichau import Pichau
 from core.Kabum import Kabum
 import sys
@@ -7,8 +8,8 @@ import sys
 
 def main(choice):
 
-    if(choice == 1):
-        pichau_links = open('pichau.txt', 'r').readlines()
+    if choice == 1:
+        pichau_links = open("pichau.txt", "r").readlines()
 
         for link in pichau_links:
             pichau = Pichau(link)
@@ -17,9 +18,8 @@ def main(choice):
 
             print(result)
 
-
-    elif(choice == 2):
-        kabum_links = open('kabum.txt', 'r').readlines()
+    elif choice == 2:
+        kabum_links = open("kabum.txt", "r").readlines()
 
         for link in kabum_links:
             kabum = Kabum(link)
@@ -28,10 +28,19 @@ def main(choice):
 
             print(result)
 
+    elif choice == 3:
+        tickers = sys.argv[2::]
+
+        status_invest = StatusInvest(tickers)
+        status_invest.start()
+        result = status_invest.finish()
+
+        print(result)
+
 
 if __name__ == "__main__":
     print(
-    """
+        """
                                                                                             
                                                                                             
    SSSSSSSSSSSSSSS                           iiii          tttt         hhhhhhh             
@@ -58,6 +67,6 @@ S:::::::::::::::SS m::::m   m::::m   m::::mi::::::i       tt:::::::::::tth:::::h
     try:
         choice = int(sys.argv[1])
     except IndexError:
-        print("Help: [1] Pichau / [2] Kabum")
+        print("Help: [1] Pichau / [2] Kabum / [3] Status Invest")
 
     main(choice)

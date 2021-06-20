@@ -1,7 +1,7 @@
 import abc
 
-class AbstractResult(metaclass=abc.ABCMeta):
 
+class AbstractResult(metaclass=abc.ABCMeta):
     @abc.abstractmethod
-    def getResultFormated(self):
+    def get_results_formated(self):
         pass
