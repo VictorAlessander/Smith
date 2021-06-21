@@ -1,14 +1,49 @@
-from distutils.core import setup
+import io
+from setuptools import (
+    setup,
+    find_packages,
+)  # pylint: disable=no-name-in-module,import-error
+
+
+def dependencies(file):
+    with open(file) as f:
+        return f.read().splitlines()
+
+
+with io.open("README.md", encoding="utf-8") as infile:
+    long_description = infile.read()
 
 setup(
-    name = 'smith',
-    packages = ['smith'],
-    version = '0.1',  # Ideally should be same as your GitHub release tag varsion
-    description = 'A webscraper with a sofisticated toolkit to scrap the world',
-    author = 'Victor Alessander',
-    author_email = 'victor.alessander.gr@gmail.com',
-    url = 'https://github.com/VictorAlessander/Smith',
-    download_url = '',
-    keywords = ['crawler', 'webscraping'],
-    classifiers = [],
+    name="smith_the_crawler",
+    packages=find_packages(exclude=("tests", "examples")),
+    version="0.0.3",
+    # license="MIT",
+    classifiers=[
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3 :: Only",
+    ],
+    python_requires=">=3.1",
+    description="A webscraper with a sofisticated toolkit to scrap the world",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    download_url = 'https://github.com/VictorAlessander/Smith/archive/refs/tags/v0.0.5-alpha.tar.gz',
+    author="Victor Alessander",
+    author_email="victor.alessander.gr@gmail.com",
+    url="https://github.com/VictorAlessander/Smith",
+    keywords=[
+        "crawler",
+        "webscraping",
+        "webscraper",
+        "investments",
+        "investment",
+        "invest",
+    ],
+    install_requires=dependencies("requirements.txt"),
+    # tests_require=dependencies("requirements-dev.txt"),
+    include_package_data=True,
+    # extras_require={"ipython": ["IPython==5.7.0", "ipywidgets==7.1.0",]},
 )
