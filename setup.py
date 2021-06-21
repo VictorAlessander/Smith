@@ -5,9 +5,9 @@ from setuptools import (
 )  # pylint: disable=no-name-in-module,import-error
 
 
-# def dependencies(file):
-#     with open(file) as f:
-#         return f.read().splitlines()
+def dependencies(file):
+    with open(file) as f:
+        return f.read().splitlines()
 
 
 with io.open("README.md", encoding="utf-8") as infile:
@@ -16,7 +16,7 @@ with io.open("README.md", encoding="utf-8") as infile:
 setup(
     name="smith_the_crawler",
     packages=find_packages(exclude=("tests", "examples")),
-    version="0.0.3",
+    version="0.0.7-alpha",
     # license="MIT",
     classifiers=[
         "Programming Language :: Python",
@@ -30,7 +30,7 @@ setup(
     description="A webscraper with a sofisticated toolkit to scrap the world",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    download_url = 'https://github.com/VictorAlessander/Smith/archive/refs/tags/v0.0.5-alpha.tar.gz',
+    download_url = 'https://github.com/VictorAlessander/Smith/archive/refs/tags/v0.0.7-alpha.tar.gz',
     author="Victor Alessander",
     author_email="victor.alessander.gr@gmail.com",
     url="https://github.com/VictorAlessander/Smith",
@@ -43,6 +43,7 @@ setup(
         "invest",
     ],
     install_requires=["bs4", "plotly", "requests", "telepot"],
+    # install_requires=dependencies('requirements.txt'),
     # tests_require=dependencies("requirements-dev.txt"),
     include_package_data=True,
     # extras_require={"ipython": ["IPython==5.7.0", "ipywidgets==7.1.0",]},
