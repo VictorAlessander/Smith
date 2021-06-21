@@ -5,9 +5,9 @@ from setuptools import (
 )  # pylint: disable=no-name-in-module,import-error
 
 
-def dependencies(file):
-    with open(file) as f:
-        return f.read().splitlines()
+# def dependencies(file):
+#     with open(file) as f:
+#         return f.read().splitlines()
 
 
 with io.open("README.md", encoding="utf-8") as infile:
@@ -42,7 +42,7 @@ setup(
         "investment",
         "invest",
     ],
-    install_requires=dependencies("requirements.txt"),
+    install_requires=["bs4", "plotly", "requests", "telepot"],
     # tests_require=dependencies("requirements-dev.txt"),
     include_package_data=True,
     # extras_require={"ipython": ["IPython==5.7.0", "ipywidgets==7.1.0",]},
