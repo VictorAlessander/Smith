@@ -6,3 +6,5 @@ venv/*
 .vscode/*
 comparative.html
 ProjectSmithEnv/*
+dist/*
+*.egg*
