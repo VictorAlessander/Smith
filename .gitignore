@@ -4,7 +4,8 @@ venv/*
 *.db
 .env
 .vscode/*
-comparative.html
-ProjectSmithEnv/*
 dist/*
+*.tar.gz
+*.whl
 *.egg*
+src/*.egg*
