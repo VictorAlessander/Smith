@@ -16,7 +16,7 @@ with io.open("README.md", encoding="utf-8") as infile:
 setup(
     name="smith_the_crawler",
     packages=find_packages(exclude=("tests", "examples")),
-    version="0.0.9-alpha",
+    version="0.0.10-alpha",
     # license="MIT",
     classifiers=[
         "Programming Language :: Python",
@@ -30,7 +30,7 @@ setup(
     description="A webscraper with a sofisticated toolkit to scrap the world",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    download_url = 'https://github.com/VictorAlessander/Smith/archive/refs/tags/v0.0.9-alpha.tar.gz',
+    download_url = 'https://github.com/VictorAlessander/Smith/archive/refs/tags/v0.0.10-alpha.tar.gz',
     author="Victor Alessander",
     author_email="victor.alessander.gr@gmail.com",
     url="https://github.com/VictorAlessander/Smith",
@@ -42,7 +42,7 @@ setup(
         "investment",
         "invest",
     ],
-    install_requires=["beautifulsoup4", "plotly", "requests", "pandas", "fake_useragent", "openpyxl"],
+    install_requires=["beautifulsoup4", "plotly", "requests", "pandas", "fake-useragent", "openpyxl"],
     # install_requires=dependencies('requirements.txt'),
     # tests_require=dependencies("requirements-dev.txt"),
     include_package_data=True,
