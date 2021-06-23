@@ -2,21 +2,19 @@
 
 
 import requests
-import re
 from fake_useragent import UserAgent
-import time
+
+# import re
 
 
 class Avaliator(object):
-
     def __init__(self, url):
         self.url = url
 
-
     def avaliate(self):
-        link_clearing = lambda arg: re.sub('[\n]', '', arg)
+        # link_clearing = lambda arg: re.sub('[\n]', '', arg)
 
-        self.url = link_clearing(self.url)
+        # self.url = link_clearing(self.url)
 
         response = requests.head(self.url)
 
@@ -26,17 +24,14 @@ class Avaliator(object):
         else:
             raise ConnectionError
 
-
     def connect(self):
-        # useragent = UserAgent()
+        useragent = UserAgent()
 
-        # header = {
-        #     'Referer': '{}'.format(self.url),
-        #     'User-Agent': '{}'.format(str(useragent.random))
-        # }
+        headers = {
+            "Referer": "{}".format(self.url),
+            "User-Agent": "{}".format(str(useragent.random)),
+        }
 
-        # time.sleep(5)
-
-        response = requests.get(self.url)
+        response = requests.get(self.url, headers=headers)
 
         return response

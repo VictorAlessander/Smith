@@ -1,0 +1,37 @@
+{
+    "python.pythonPath": "venv/bin/python3.9",
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.linting.flake8Args": [
+        "--ignore=E24,W504",
+        "--verbose"
+    ],
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": ["--line-length", "79"],
+    "[python]": {
+        "editor.rulers": [72, 79],
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": false,
+        "editor.formatOnSaveMode": "file"
+    },
+    "files.associations": {
+        "*/.html": "html",
+        "*/templates//.html": "django-html",
+        "*/templates//": "django-txt",
+        "*/requirements{/,}.{txt,in}": "pip-requirements"
+    },
+    "emmet.includeLanguages": {"django-html": "html"},
+    "prettier.requireConfig": true,
+    "[django-html]": {
+        "editor.defaultFormatter": "HookyQR.beautify",
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true
+    },
+    "beautify.language": {
+        "html": [
+            "django-html",
+        ]
+    },
+}
