@@ -16,7 +16,7 @@ with io.open("README.md", encoding="utf-8") as infile:
 setup(
     name="smith_the_crawler",
     packages=find_packages(exclude=("tests", "examples")),
-    version="0.0.11-alpha",
+    version="0.0.12-alpha",
     # license="MIT",
     classifiers=[
         "Programming Language :: Python",
@@ -30,7 +30,7 @@ setup(
     description="A webscraper with a sofisticated toolkit to scrap the world",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    download_url="https://github.com/VictorAlessander/Smith/archive/refs/tags/v0.0.11-alpha.tar.gz",
+    download_url="https://github.com/VictorAlessander/Smith/archive/refs/tags/v0.0.12-alpha.tar.gz",
     author="Victor Alessander",
     author_email="victor.alessander.gr@gmail.com",
     url="https://github.com/VictorAlessander/Smith",
